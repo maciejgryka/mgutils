@@ -19,7 +19,7 @@ def get_image_profile(image, p0, p1, n_samples=None):
     n_channels = image.shape[2]
     profile = np.zeros([n_samples, n_channels])
     for c in range(n_channels):
-        profile[:,c] = map_coordinates(image[:,:,c], np.vstack((x,y)))
+        profile[:,c] = map_coordinates(image[:,:,c], np.vstack((y,x)))
 
     # Extract the values along the line, using cubic interpolation
     return profile
